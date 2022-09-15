@@ -29,13 +29,15 @@ _Make a list of examples of what the method will take and return._
 ```ruby
 # EXAMPLE
 
-check_todo('#TODO some tests')
-check_todo('#TODO: write a program')
-check_todo('rinse and repeat #TODO')
-check_todo('This should #TODO work too')
-check_todo('This should al#TODOso work too')
-check_todo('TODO this perhaps shouldn\'t work')
-check_todo('this #TO DO shouldn\'t work either')
+check_todo('#TODO')
+check_todo('#TODO some tests') -> true
+check_todo('#TODO: write a program') -> true
+check_todo('rinse and repeat #TODO') -> true
+check_todo('This should #TODO work too') -> true
+check_todo('This should al#TODOso work too') -> true
+check_todo('TODO this perhaps shouldn\'t work') -> false
+check_todo('this #TO DO shouldn\'t work either') -> false
+check_todo('This shouldn\'t have a chance of working') -> false
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
