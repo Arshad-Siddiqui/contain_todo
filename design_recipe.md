@@ -2,20 +2,22 @@
 
 ## 1. Describe the Problem
 
-_Put or write the user story here. Add any clarifying notes you might have._
+> As a user  
+> So that I can keep track of my tasks  
+> I want to check if a text includes the string `#TODO`.
 
 ## 2. Design the Method Signature
 
-_Include the name of the method, its parameters, return value, and side effects._
+def check_todo(text) -> boolean
 
 ```ruby
 # EXAMPLE
 
-# `extract_upper` extracts uppercase words from a list of words
-uppercase_words = extract_uppercase(mixed_words)
+# `check_todo` returns boolean based on if text contains string '#TODO'
+contains_todo = check_todo(some_text)
 
-mixed_words: a string (e.g. "hello WORLD")
-uppercase_words: a list of strings (e.g. ["WORLD"])
+some_text: a string (e.g. 'Hello #TODO')
+contains_todo: a boolean
 
 # The method doesn't print anything or have any other side-effects
 ```
@@ -27,13 +29,13 @@ _Make a list of examples of what the method will take and return._
 ```ruby
 # EXAMPLE
 
-extract_uppercase("hello WORLD") => ["WORLD"]
-extract_uppercase("HELLO WORLD") => ["HELLO", "WORLD"]
-extract_uppercase("hello world") => []
-extract_uppercase("hello WoRLD") => []
-extract_uppercase("hello WORLD!") => ["WORLD"]
-extract_uppercase("") => []
-extract_uppercase(nil) throws an error
+check_todo('#TODO some tests')
+check_todo('#TODO: write a program')
+check_todo('rinse and repeat #TODO')
+check_todo('This should #TODO work too')
+check_todo('This should al#TODOso work too')
+check_todo('TODO this perhaps shouldn\'t work')
+check_todo('this #TO DO shouldn\'t work either')
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
